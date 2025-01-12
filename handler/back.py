@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp
 from utils import texts, buttons
-from state import NewAnime
+from state import NewAnimeState
 
 
 
@@ -15,4 +15,4 @@ async def back_handler(callback: CallbackQuery, state: FSMContext):
     await callback.message.delete()
     
     await callback.message.answer(texts.SHIKIMORE_URL, reply_markup=buttons.BACK)
-    await NewAnime.shikimore_url.set()
+    await NewAnimeState.shikimore_url.set()

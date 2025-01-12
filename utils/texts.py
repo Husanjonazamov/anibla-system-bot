@@ -56,3 +56,39 @@ SUCESS_ADMIN = \
 """
 Anime Rejissorga yuborildi!
 """
+
+REJISSYOR_ACCEPT = \
+"""
+✅ Muvaffaqiyatli qabul qilindi!
+"""
+
+
+REJISSOR_SOURCE_FILE = \
+"""
+Kerakli source faylarni kiriting!
+"""
+
+
+SELECT_TRANSLATORS  = \
+"""
+Kerakli tarjimonlarni tanlang va Yuborih tugmasini boshing!
+(bir nechta tarjimon tanlasangiz ham bo'ladi)
+"""
+
+
+
+SUCCESS_TRANSLATORS = \
+"""
+Siz tanlagan tarjimonlarga fayllar yuborildi
+"""
+
+
+NOT_TRANSLATORS = \
+"""
+Siz hali tarjimon tanlamadizgiz
+"""
+
+TRANSLATOR_NOTIFICATION_TEXT = \
+"""
+Sizga yangi topshiriq berildi!
+"""

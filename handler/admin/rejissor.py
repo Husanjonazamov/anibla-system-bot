@@ -4,13 +4,13 @@ from aiogram.dispatcher import FSMContext
 
 # kode import
 from loader import dp
-from state import NewAnime
+from state import NewAnimeState
 from services.services import getUser
 from utils import texts, buttons
 
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('user_id_'), state=NewAnime.rejissor)
+@dp.callback_query_handler(lambda call: call.data.startswith('user_id_'), state=NewAnimeState.rejissor)
 async def rejissyor_handler(callback: CallbackQuery, state: FSMContext):
     
     rejissyor = callback.data.split('_')[2] 
@@ -43,5 +43,5 @@ async def rejissyor_handler(callback: CallbackQuery, state: FSMContext):
         reply_markup=buttons.ADMIN_CHECK
     )
     
-    await NewAnime.check.set()
+    await NewAnimeState.check.set()
     

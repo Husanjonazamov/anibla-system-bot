@@ -5,11 +5,11 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp
 from utils import texts, buttons
-from state import NewAnime
+from state import NewAnimeState
 from handler.admin.handler import newanime_handler
 
 
-@dp.message_handler(content_types=['text'], state=NewAnime.uz_name)
+@dp.message_handler(content_types=['text'], state=NewAnimeState.uz_name)
 async def anime_uzname(message: Message, state: FSMContext):
     
     uz_name = message.text
@@ -23,5 +23,5 @@ async def anime_uzname(message: Message, state: FSMContext):
         
         await message.answer(texts.SHIKIMORE_URL, reply_markup=buttons.BACK)
         
-        await NewAnime.shikimore_url.set()
+        await NewAnimeState.shikimore_url.set()
     

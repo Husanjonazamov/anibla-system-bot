@@ -5,11 +5,11 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp, bot
 from utils import texts, buttons
-from state import NewAnime
+from state import NewAnimeState
 from services.services import createAnime
 
 
-@dp.message_handler(lambda message: message.text.startswith(buttons.CHECK), state=NewAnime.check)
+@dp.message_handler(lambda message: message.text.startswith(buttons.CHECK), state=NewAnimeState.check)
 async def check_handler(message: Message, state: FSMContext):
     
     data = await state.get_data()
@@ -26,7 +26,7 @@ async def check_handler(message: Message, state: FSMContext):
     await bot.send_message(
         chat_id=rejissyor,
         text=caption, 
-        reply_markup=buttons.create_accept_button()
+        reply_markup=buttons.create_accept_button(rejissyor)
     )
     
     

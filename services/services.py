@@ -40,3 +40,21 @@ def createAnime(anime):
             print(response.status_code)
     except requests.exceptions.RequestException as e:
         print(f"Request failed: {e}")
+        
+        
+        
+        
+def getTranslatorList():
+    url = f"{BASE_URL}/user/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        directors = [
+            user for user in data.get('data', {}).get('results', [])
+            if user.get('role') == "tarjimon"
+        ]
+        return directors
+    else:
+        print(f"Error fetching data: {response.status_code}")
+        return []
+    

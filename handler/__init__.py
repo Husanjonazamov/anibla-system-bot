@@ -4,3 +4,4 @@ from . import back
 
 # folder import
 from . import admin
+from . import rejissyor

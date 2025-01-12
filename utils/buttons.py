@@ -69,14 +69,52 @@ ADMIN_CHECK = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-def create_accept_button():
+def create_accept_button(rejissyor):
     keyboard = InlineKeyboardMarkup(row_width=1)
     
     accept_button = InlineKeyboardButton(
-        text="✅ Qabul qilish",  
-        callback_data="accept_rejissor"  
+        text="✅ Qabul qilish",
+        callback_data=f"accept_rejissor:{rejissyor}" 
     )
     keyboard.add(accept_button)
     
     return keyboard
 
+
+REJISSYOR_FILE_CENCEL = "❌ Bekor qilish"
+
+def create_cancel_button():
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+    
+    cancel_button = KeyboardButton(text=REJISSYOR_FILE_CENCEL)
+    keyboard.add(cancel_button)
+    
+    return keyboard
+
+
+
+def create_translator_buttons(translators, selected_translators):
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    
+    for translator in translators:
+        translator_id = translator.get("user_id")
+        first_name = translator.get("first_name")
+        
+        if translator_id in selected_translators:
+            button_text = f"✅ {first_name}"
+        else:
+            button_text = first_name
+        
+        button = InlineKeyboardButton(
+            text=button_text,  
+            callback_data=f"select_translator_{translator_id}"  
+        )
+        keyboard.add(button)
+
+    accept_button = InlineKeyboardButton(
+        text="📤 Yuborish",  
+        callback_data="submit_translators"  
+    )
+    keyboard.add(accept_button)
+    
+    return keyboard
