@@ -29,3 +29,14 @@ def getRejissyorList():
         return []
     
 
+def createAnime(anime):
+    url = f"{BASE_URL}/anime/"
+    try:
+        response = requests.post(url, json=anime)
+        if response.status_code in [200, 201]:
+            data = response.json()
+            return data
+        else:
+            print(response.status_code)
+    except requests.exceptions.RequestException as e:
+        print(f"Request failed: {e}")

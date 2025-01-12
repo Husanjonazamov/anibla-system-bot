@@ -28,7 +28,6 @@ BACK = ReplyKeyboardMarkup(
 )
 
 
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 def create_inline_buttons(directors):
     keyboard = InlineKeyboardMarkup(row_width=1) 
@@ -69,3 +68,15 @@ ADMIN_CHECK = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
+
+def create_accept_button():
+    keyboard = InlineKeyboardMarkup(row_width=1)
+    
+    accept_button = InlineKeyboardButton(
+        text="✅ Qabul qilish",  
+        callback_data="accept_rejissor"  
+    )
+    keyboard.add(accept_button)
+    
+    return keyboard
+

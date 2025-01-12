@@ -6,7 +6,7 @@ from aiogram.dispatcher import FSMContext
 from loader import dp
 from utils import texts, buttons
 from state import NewAnime
-from handler.anime.handler import newanime_handler
+from handler.admin.handler import newanime_handler
 
 
 @dp.message_handler(content_types=['text'], state=NewAnime.uz_name)

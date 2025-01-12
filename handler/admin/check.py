@@ -6,14 +6,14 @@ from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from utils import texts, buttons
 from state import NewAnime
-
+from services.services import createAnime
 
 
 @dp.message_handler(lambda message: message.text.startswith(buttons.CHECK), state=NewAnime.check)
 async def check_handler(message: Message, state: FSMContext):
     
     data = await state.get_data()
-    rejissyor_id = data.get('rejissyor')
+    rejissyor = data.get('rejissyor')
     name = data.get('name')
     uz_name = data.get('uz_name')
     shikimore_url = data.get('shikimore_url')
@@ -23,12 +23,22 @@ async def check_handler(message: Message, state: FSMContext):
         uz_name=uz_name,
         shikimore_url=shikimore_url
     )
-    print(rejissyor_id)
     await bot.send_message(
-        chat_id=rejissyor_id,
+        chat_id=rejissyor,
         text=caption, 
-        reply_markup=buttons
+        reply_markup=buttons.create_accept_button()
     )
+    
+    
+    anime = ({
+        'name': name,
+        'uz_name': uz_name,
+        'shikimore_url': shikimore_url,
+        'rejissyor': rejissyor
+    })    
+    
+    createAnime(anime)
+    
     await message.answer(texts.SUCESS_ADMIN, reply_markup=buttons.ADMINPANEL)
     
     
