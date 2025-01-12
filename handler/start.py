@@ -23,3 +23,5 @@ async def start_handler(message: Message, state: FSMContext):
         await message.answer(texts.START.format(firstname), reply_markup=buttons.ADMINPANEL)
     else:
         await message.answer(texts.START.format(firstname))
+        
+    await state.finish()

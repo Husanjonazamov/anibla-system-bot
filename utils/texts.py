@@ -50,3 +50,9 @@ def rejissyor_nontification(**kwargs):
 
     return newanime
 
+
+
+SUCESS_ADMIN = \
+"""
+Anime Rejissorga yuborildi!
+"""

@@ -6,17 +6,23 @@ from state import NewAnime
 from services.services import getRejissyorList
 
 
+
+
 @dp.message_handler(content_types=['text'], state=NewAnime.shikimore_url)
 async def anime_shikimore_url(message: Message, state: FSMContext):
     
     shikimore_url = message.text
     
-    await state.update_data({
-        'shikimore_url': shikimore_url
-        })
-    
-    rejissyor = getRejissyorList()
-    
-    await message.answer(texts.SELECT_REJISSYOR, reply_markup=buttons.create_inline_buttons(rejissyor))
-    
-    await NewAnime.rejissor.set()
+    if shikimore_url == buttons.BASE_BACK:
+        await message.answer(texts.ANIME_UZNAME, reply_markup=buttons.BACK)
+        await NewAnime.uz_name.set()
+    else:
+        await state.update_data({
+            'shikimore_url': shikimore_url
+            })
+        
+        rejissyor = getRejissyorList()
+        
+        await message.answer(texts.SELECT_REJISSYOR, reply_markup=buttons.create_inline_buttons(rejissyor))
+        
+        await NewAnime.rejissor.set()

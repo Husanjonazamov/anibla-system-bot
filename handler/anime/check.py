@@ -26,7 +26,9 @@ async def check_handler(message: Message, state: FSMContext):
     print(rejissyor_id)
     await bot.send_message(
         chat_id=rejissyor_id,
-        text=caption
+        text=caption, 
+        reply_markup=buttons
     )
-    await message.answer('yahshi')
+    await message.answer(texts.SUCESS_ADMIN, reply_markup=buttons.ADMINPANEL)
+    
     

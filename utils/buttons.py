@@ -28,6 +28,8 @@ BACK = ReplyKeyboardMarkup(
 )
 
 
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
 def create_inline_buttons(directors):
     keyboard = InlineKeyboardMarkup(row_width=1) 
     for director in directors:
@@ -38,8 +40,18 @@ def create_inline_buttons(directors):
             text=director.get("first_name"),  
             callback_data=callback_data
         )
+
         keyboard.add(button)
+    
+    back_button = InlineKeyboardButton(
+        text="🔙 Orqaga",  
+        callback_data="go_back"  
+    )
+    
+    keyboard.add(back_button)  
     return keyboard
+
+
 
 
 CHECK = 'Yuborish'
