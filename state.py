@@ -6,3 +6,4 @@ class NewAnime(StatesGroup):
     uz_name = State()
     shikimore_url = State()
     rejissor = State()
+    check = State()

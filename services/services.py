@@ -14,16 +14,18 @@ def getUser(user_id):
         print(response.status_code)
         
         
-def getRejissyor():
+def getRejissyorList():
     url = f"{BASE_URL}/user/"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        directors = [user for user in data.get('data', {}).get('results', []) if user.get('role') == "rejissyor"]
-        for director in directors:
-            print(f"User ID: {director['user_id']}")
-            return director
+        directors = [
+            user for user in data.get('data', {}).get('results', [])
+            if user.get('role') == "rejissyor"
+        ]
+        return directors
     else:
         print(f"Error fetching data: {response.status_code}")
+        return []
+    
 
-        

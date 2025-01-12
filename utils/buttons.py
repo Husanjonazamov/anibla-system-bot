@@ -28,14 +28,32 @@ BACK = ReplyKeyboardMarkup(
 )
 
 
+def create_inline_buttons(directors):
+    keyboard = InlineKeyboardMarkup(row_width=1) 
+    for director in directors:
+        
+        callback_data = f"user_id_{director.get('user_id')}"
+        
+        button = InlineKeyboardButton(
+            text=director.get("first_name"),  
+            callback_data=callback_data
+        )
+        keyboard.add(button)
+    return keyboard
 
 
+CHECK = 'Yuborish'
+CENCEL = 'Bekor qilish'
 
-def create_inline_buttons(user_data):
-    directors = [user for user in user_data if user['role'] == "rejissyor"]
-    
-    keyboard = [
-        [InlineKeyboardButton(user['first_name'], callback_data=user['user_id'])] for user in directors
-    ]
-    
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+ADMIN_CHECK = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text=CHECK),
+        ],
+        [
+            KeyboardButton(text=CENCEL)
+        ]
+    ],
+    resize_keyboard=True
+)
