@@ -69,15 +69,21 @@ ADMIN_CHECK = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-def create_accept_button(rejissyor):
+def create_accept_button(rejissyor, accepted=False):
     keyboard = InlineKeyboardMarkup(row_width=1)
     
-    accept_button = InlineKeyboardButton(
-        text="✅ Qabul qilish",
-        callback_data=f"accept_rejissor:{rejissyor}" 
-    )
-    keyboard.add(accept_button)
+    if accepted:
+        accept_button = InlineKeyboardButton(
+            text="📥 Qabul qilingan", 
+            callback_data="accepted_rejissyor_button"  
+        )
+    else:
+        accept_button = InlineKeyboardButton(
+            text="✅ Qabul qilish",
+            callback_data=f"accept_rejissor:{rejissyor}"  
+        )
     
+    keyboard.add(accept_button)
     return keyboard
 
 
@@ -177,3 +183,17 @@ def create_resend_file_button(rejissyor_id: int, translator_id: int):
     )
     
     return keyboard
+
+
+
+
+def update_translators_cencelled_button():
+    new_keyboard = InlineKeyboardMarkup()
+    new_keyboard.add(
+        InlineKeyboardButton(
+            text="❌ Bekor qilingan", 
+            callback_data="update_translator_cancelled"  
+        )
+    )
+    
+    return new_keyboard

@@ -21,6 +21,7 @@ async def accept_rejissor_handler(callback_query: CallbackQuery, state: FSMConte
     })
     
     await callback_query.message.answer(texts.REJISSOR_SOURCE_FILE, reply_markup=buttons.create_cancel_button())
+    await callback_query.message.edit_reply_markup(reply_markup=buttons.create_accept_button(rejissyor_id, accepted=True))
     
     await RejissyorState.file.set()
     

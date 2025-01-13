@@ -23,6 +23,11 @@ async def translator_cencel(callback: CallbackQuery, state: FSMContext):
         text=texts.CANCELLED_TRANSLATOR_SEND,
         reply_markup=buttons.create_resend_file_button(rejissyor_id, translator_id)
     )
+    
+
+    await callback.message.edit_reply_markup(reply_markup=buttons.update_translators_cencelled_button())
+    
+    
     await TranslatorCencelledState.file.set()
 
     await callback.answer(texts.CANCELLED)

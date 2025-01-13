@@ -12,6 +12,8 @@ from services.services import getTranslatorList
 
 @dp.callback_query_handler(lambda c: c.data.startswith("submit_translators_"), state='*')
 async def submit_translators_handler(callback_query: CallbackQuery, state: FSMContext):
+    
+    
     data = await state.get_data()
     selected_translators = data.get("selected_translators", [])
     selected_files = data.get("files", [])
@@ -30,8 +32,8 @@ async def submit_translators_handler(callback_query: CallbackQuery, state: FSMCo
                     caption=texts.TRANSLATOR_NOTIFICATION_TEXT,
                     reply_markup=keyboard
                 )
-        
-        await callback_query.answer(texts.SUCCESS_TRANSLATORS)
+        await callback_query.message.delete()
+        await callback_query.message.answer(texts.SUCCESS_TRANSLATORS)
     else:
         await callback_query.answer(texts.NOT_TRANSLATORS)
     

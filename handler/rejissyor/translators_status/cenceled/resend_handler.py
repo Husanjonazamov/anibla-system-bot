@@ -17,6 +17,8 @@ async def resend_handler(callback: CallbackQuery, state: FSMContext):
     rejissyor_id = int(data[1])  
     translator_id = int(data[2]) 
     
+    await callback.message.delete()
+    
     await state.update_data({"rejissyor_id":rejissyor_id})
     
     await TranslatorCencelledState.file.set()
