@@ -8,11 +8,12 @@ from utils import texts, buttons
 
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("accept_"))
+@dp.callback_query_handler(lambda c: c.data.startswith("accept__translator_"), state='*')
 async def accept_file(callback_query: CallbackQuery, state: FSMContext):
     data = callback_query.data.split("_")
-    translator_id = int(data[1])
-    rejissyor_id = int(data[2])
+    print(data)
+    translator_id = int(data[3])
+    rejissyor_id = int(data[4])
     
     await state.update_data({'rejissyor_id': rejissyor_id})
 

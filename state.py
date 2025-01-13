@@ -21,3 +21,9 @@ class Translators(StatesGroup):
     rejissyor_id = State()
     file = State()
     feedback = State()
+    
+    
+class TranslatorCencelledState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()

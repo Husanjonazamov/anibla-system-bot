@@ -5,10 +5,10 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp, bot
 from utils import texts, buttons
-from state import Translators
+from state import TranslatorCencelledState
 
 
-@dp.message_handler(content_types=['text'], state=Translators.feedback)
+@dp.message_handler(content_types=['text'], state=TranslatorCencelledState.feedback)
 async def translator_feedback(message: Message, state: FSMContext):
     feedback = message.text
     data = await state.get_data()

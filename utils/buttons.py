@@ -113,7 +113,7 @@ def create_translator_buttons(translators, selected_translators):
 
     accept_button = InlineKeyboardButton(
         text="📤 Yuborish",  
-        callback_data="submit_translators"  
+        callback_data="submit_translators_"  
     )
     keyboard.add(accept_button)
     
@@ -126,7 +126,7 @@ def create_accept_translator_button(translator_id: int, rejissyor_id: int):
     keyboard.add(
         InlineKeyboardButton(
             text="Qabul qilish",
-            callback_data=f"accept_{translator_id}_{rejissyor_id}" 
+            callback_data=f"accept__translator_{translator_id}_{rejissyor_id}" 
         )
     )
     return keyboard
@@ -145,20 +145,34 @@ def create_completed_button(translator_id: int):
 
 
 
-def create_accept_or_reject_button(translator_id: int):
+def create_accept_or_reject_button(translator_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     
     keyboard.add(
         InlineKeyboardButton(
             text="✅Qabul qilaman",
-            callback_data=f"accept_{translator_id}"
+            callback_data=f"translator_work_accept{translator_id}_{rejissyor_id}"
         )
     )
     
     keyboard.add(
         InlineKeyboardButton(
             text="❌ Qayta yuborish",
-            callback_data=f"reject_{translator_id}"
+            callback_data=f"reject_{translator_id}_{rejissyor_id}"
+        )
+    )
+    
+    return keyboard
+
+
+
+def create_resend_file_button(rejissyor_id: int, translator_id: int):
+    keyboard = InlineKeyboardMarkup()
+    
+    keyboard.add(
+        InlineKeyboardButton(
+            text="📤 Yana faylni yuborish",
+            callback_data=f"resend_{rejissyor_id}_{translator_id}"
         )
     )
     

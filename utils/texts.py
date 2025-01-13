@@ -120,5 +120,19 @@ Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
 
 TRANSLATOR_WORK_SEND = \
 """
-Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi.    
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
+Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+"""
+
+
+
+CANCELLED = \
+"""
+Tarjima bekor qilindi
+"""
+
+
+CANCELLED_TRANSLATOR_SEND = \
+"""
+Tarjima rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
 """

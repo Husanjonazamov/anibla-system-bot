@@ -14,7 +14,7 @@ from services.services import getTranslatorList
 async def select_translator(callback_query: CallbackQuery, state: FSMContext):
     user_id = callback_query.from_user.id
     selected_translator_id = callback_query.data.split("_")[2]
-    
+
     data = await state.get_data()
     selected_translators = data.get("selected_translators", [])
     
@@ -31,7 +31,8 @@ async def select_translator(callback_query: CallbackQuery, state: FSMContext):
         reply_markup=buttons.create_translator_buttons(translators, selected_translators)
     )
     
-    selected_names = [t['first_name'] for t in translators if t['user_id'] in selected_translators]
+    selected_names = [t['first_name'] for t in translators if str(t['user_id']) in selected_translators]
     await callback_query.answer(f"Tanlangan tarjimonlar: {', '.join(selected_names)}")
 
-    await RejissyorState.worker_send.set()
+
+    # await RejissyorState.worker_send.set()
