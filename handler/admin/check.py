@@ -21,7 +21,8 @@ async def check_handler(message: Message, state: FSMContext):
     caption = texts.rejissyor_nontification(
         name=name,
         uz_name=uz_name,
-        shikimore_url=shikimore_url
+        shikimore_url=shikimore_url,
+        rejissyor=rejissyor
     )
     await bot.send_message(
         chat_id=rejissyor,

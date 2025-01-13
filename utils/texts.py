@@ -47,6 +47,7 @@ def rejissyor_nontification(**kwargs):
     newanime += f"Nomi: {kwargs['name']}\n"
     newanime += f"Uzbekcha Nomi: {kwargs['uz_name']}\n"
     newanime += f"Shikimore url: {kwargs['shikimore_url']}\n"
+    
 
     return newanime
 
@@ -91,4 +92,33 @@ Siz hali tarjimon tanlamadizgiz
 TRANSLATOR_NOTIFICATION_TEXT = \
 """
 Sizga yangi topshiriq berildi!
+
+"""
+
+
+TRANSLATOR_ACCEPT = \
+"""
+Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+"""
+
+
+
+TRANSLATORS_FILE_SEND = \
+"""
+Bajarilgan ishni qayta yuklang
+""" 
+
+
+
+TRANSLATORS_FEEDBACK = \
+"""
+Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+"""
+
+
+
+
+TRANSLATOR_WORK_SEND = \
+"""
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi.    
 """

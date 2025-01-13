@@ -118,3 +118,48 @@ def create_translator_buttons(translators, selected_translators):
     keyboard.add(accept_button)
     
     return keyboard
+
+
+
+def create_accept_translator_button(translator_id: int, rejissyor_id: int):
+    keyboard = InlineKeyboardMarkup()
+    keyboard.add(
+        InlineKeyboardButton(
+            text="Qabul qilish",
+            callback_data=f"accept_{translator_id}_{rejissyor_id}" 
+        )
+    )
+    return keyboard
+
+
+
+def create_completed_button(translator_id: int):
+    keyboard = InlineKeyboardMarkup()
+    keyboard.add(
+        InlineKeyboardButton(
+            text="Bajarildi",
+            callback_data=f"completed_{translator_id}"
+        )
+    )
+    return keyboard
+
+
+
+def create_accept_or_reject_button(translator_id: int):
+    keyboard = InlineKeyboardMarkup()
+    
+    keyboard.add(
+        InlineKeyboardButton(
+            text="✅Qabul qilaman",
+            callback_data=f"accept_{translator_id}"
+        )
+    )
+    
+    keyboard.add(
+        InlineKeyboardButton(
+            text="❌ Qayta yuborish",
+            callback_data=f"reject_{translator_id}"
+        )
+    )
+    
+    return keyboard

@@ -10,8 +10,14 @@ class NewAnimeState(StatesGroup):
     
     
 class RejissyorState(StatesGroup):
+    rejissyor_id = State()
     file = State()
     worker = State()
     worker_send = State()
     
     
+    
+class Translators(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()
