@@ -27,3 +27,11 @@ class TranslatorCencelledState(StatesGroup):
     rejissyor_id = State()
     file = State()
     feedback = State()
+    
+    
+class VoiceActorState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    voice_worker = State()
+    
+    

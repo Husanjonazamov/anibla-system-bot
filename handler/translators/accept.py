@@ -20,7 +20,7 @@ async def accept_file(callback_query: CallbackQuery, state: FSMContext):
     await bot.edit_message_reply_markup(
         chat_id=callback_query.message.chat.id,
         message_id=callback_query.message.message_id,
-        reply_markup=buttons.create_completed_button(translator_id)
+        reply_markup=buttons.create_completed_translator_button(translator_id)
     )   
 
     await bot.send_message(

@@ -6,3 +6,4 @@ from . import back
 from . import admin
 from . import translators
 from . import rejissyor
+from . import voiceAktyor

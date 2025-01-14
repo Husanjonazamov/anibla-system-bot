@@ -10,31 +10,29 @@ from services.services import getTranslatorList
 
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("submit_translators_"), state='*')
-async def submit_translators_handler(callback_query: CallbackQuery, state: FSMContext):
-    
+@dp.callback_query_handler(lambda c: c.data.startswith("submit_voice_"), state='*')
+async def submit_voice_handler(callback_query: CallbackQuery, state: FSMContext):
     
     data = await state.get_data()
-    selected_translators = data.get("selected_translators", [])
+    selected_voice = data.get("selected_voice", [])
     selected_files = data.get("files", [])
     rejissyor_id = data.get('rejissyor_id')  
-    print(rejissyor_id)
     
-    if selected_translators and selected_files:
-        for translator_id in selected_translators:
-            print(translator_id)
+    
+    if selected_voice and selected_files:
+        for voice_aktyor_id in selected_voice:
             for file in selected_files:
-                keyboard = buttons.create_accept_translator_button(translator_id, rejissyor_id)
+                keyboard = buttons.create_accept_voice_button(voice_aktyor_id, rejissyor_id)
                 
                 await bot.send_document(
-                    chat_id=translator_id,
+                    chat_id=voice_aktyor_id,
                     document=file['file_id'],
-                    caption=texts.TRANSLATOR_NOTIFICATION_TEXT,
+                    caption=texts.WORKER_NOTIFICATION_TEXT,
                     reply_markup=keyboard
                 )
         await callback_query.message.delete()
         await callback_query.message.answer(texts.SUCCESS_TRANSLATORS)
     else:
-        await callback_query.answer(texts.NOT_TRANSLATORS)
+        await callback_query.answer(texts.NOT_VOICE_AKTYOR)
     
     await state.finish()

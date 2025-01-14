@@ -89,10 +89,9 @@ NOT_TRANSLATORS = \
 Siz hali tarjimon tanlamadizgiz
 """
 
-TRANSLATOR_NOTIFICATION_TEXT = \
+WORKER_NOTIFICATION_TEXT = \
 """
 Sizga yangi topshiriq berildi!
-
 """
 
 
@@ -135,4 +134,34 @@ Tarjima bekor qilindi
 CANCELLED_TRANSLATOR_SEND = \
 """
 Tarjima rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+"""
+
+
+VOICE_SOURCE_FILE = \
+"""
+Ovoz aktyorlari uchun source fayl kiriting
+"""
+
+
+SUCCES_TRANSLATOR_FILE = \
+"""
+Siz tashlagan tarjimani rejissyor qabul qildi!
+"""
+
+VOICE_WORKER_LIST = \
+"""
+Ovoz aktyorlarini tanlang!
+"""
+
+
+
+SUCCESS_VOICE_AKTYOR = \
+"""
+Siz tanlagan ovoz aktyorlariga fayllar yuborildi
+"""
+
+
+NOT_VOICE_AKTYOR = \
+"""
+Siz hali ovoz aktyorlarini tanlamadizgiz
 """

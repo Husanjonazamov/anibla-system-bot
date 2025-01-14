@@ -58,3 +58,19 @@ def getTranslatorList():
         print(f"Error fetching data: {response.status_code}")
         return []
     
+
+
+def getVoiceAktyorList():
+    url = f"{BASE_URL}/user/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        directors = [
+            user for user in data.get('data', {}).get('results', [])
+            if user.get('role') == "ovoz aktyori"
+        ]
+        return directors
+    else:
+        print(f"Error fetching data: {response.status_code}")
+        return []
+    

@@ -9,7 +9,7 @@ from state import Translators
 
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("completed_"))
+@dp.callback_query_handler(lambda c: c.data.startswith("completed_translator_"))
 async def complated(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(texts.TRANSLATORS_FILE_SEND)
     

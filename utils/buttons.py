@@ -139,12 +139,12 @@ def create_accept_translator_button(translator_id: int, rejissyor_id: int):
 
 
 
-def create_completed_button(translator_id: int):
+def create_completed_translator_button(translator_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
         InlineKeyboardButton(
             text="Bajarildi",
-            callback_data=f"completed_{translator_id}"
+            callback_data=f"completed_translator_{translator_id}"
         )
     )
     return keyboard
@@ -157,7 +157,7 @@ def create_accept_or_reject_button(translator_id: int, rejissyor_id: int):
     keyboard.add(
         InlineKeyboardButton(
             text="✅Qabul qilaman",
-            callback_data=f"translator_work_accept{translator_id}_{rejissyor_id}"
+            callback_data=f"translator_work_accept_{translator_id}_{rejissyor_id}"
         )
     )
     
@@ -197,3 +197,69 @@ def update_translators_cencelled_button():
     )
     
     return new_keyboard
+
+
+def update_translators_accept_button():
+    update_button = InlineKeyboardMarkup()
+    update_button.add(
+        InlineKeyboardButton(
+            text="📥 Qabul qilingan", 
+            callback_data="update_translator_accept"  
+        )
+    )
+    
+    return update_button
+
+
+
+
+def create_voice_aktyor_buttons(voice_aktyor, selected_voice):
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    
+    for translator in voice_aktyor:
+        translator_id = translator.get("user_id")
+        first_name = translator.get("first_name")
+        
+        if translator_id in selected_voice:
+            button_text = f"✅ {first_name}"
+        else:
+            button_text = first_name
+        
+        button = InlineKeyboardButton(
+            text=button_text,  
+            callback_data=f"select_voice_{translator_id}"  
+        )
+        keyboard.add(button)
+
+    accept_button = InlineKeyboardButton(
+        text="📤 Yuborish",  
+        callback_data="submit_voice_"  
+    )
+    keyboard.add(accept_button)
+    
+    return keyboard
+
+
+
+
+
+def create_accept_voice_button(voice_aktyor_id: int, rejissyor_id: int):
+    keyboard = InlineKeyboardMarkup()
+    keyboard.add(
+        InlineKeyboardButton(
+            text="Qabul qilish",
+            callback_data=f"accept_voice_aktyor_{voice_aktyor_id}_{rejissyor_id}" 
+        )
+    )
+    return keyboard
+
+
+def create_completed_voice_aktyor_button(voice_aktyor_id: int):
+    keyboard = InlineKeyboardMarkup()
+    keyboard.add(
+        InlineKeyboardButton(
+            text="Bajarildi",
+            callback_data=f"completed_voice_{voice_aktyor_id}"
+        )
+    )
+    return keyboard
