@@ -15,6 +15,8 @@ async def translator_accept_status(callback: CallbackQuery, state: FSMContext):
     rejissyor_id = int(callback_data[3])
     translator_id = int(callback_data[4])  
     
+    print("translator sinu", callback_data)
+    
     await state.update_data({'rejissyor_id': rejissyor_id})
     
     await bot.send_message(

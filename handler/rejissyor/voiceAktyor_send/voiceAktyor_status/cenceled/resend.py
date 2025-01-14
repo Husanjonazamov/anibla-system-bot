@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp, bot
 from utils import texts, buttons
-from state import TranslatorCencelledState
+from state import VoiceAktyorCenceledState
 
 
 
@@ -17,8 +17,9 @@ async def resend_handler(callback: CallbackQuery, state: FSMContext):
     rejissyor_id = int(data[2])  
     voice_aktyor_id = int(data[3]) 
     
+    
     await callback.message.delete()
     
     await state.update_data({"rejissyor_id":rejissyor_id})
     
-    await TranslatorCencelledState.file.set()
+    await VoiceAktyorCenceledState.file.set()

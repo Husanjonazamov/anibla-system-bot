@@ -15,6 +15,8 @@ async def translator_feedback(message: Message, state: FSMContext):
     file = data.get('file_id')
     rejissyor_id = data.get('rejissyor_id')
     
+    print(f"translaro {feedback} ??????")
+    
     translator_id = message.from_user.id
     
     await bot.send_document(

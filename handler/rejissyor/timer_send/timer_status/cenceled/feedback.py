@@ -20,7 +20,7 @@ async def timer_feedback(message: Message, state: FSMContext):
         chat_id=rejissyor_id,
         document=file,
         caption=feedback,
-        reply_markup=buttons.create_accept_or_reject_button(rejissyor_id, timer_id)
+        reply_markup=buttons.accept_or_reject_timer_button(rejissyor_id, timer_id)
     )
     
     await message.answer(texts.TIMER_WORK_SEND)

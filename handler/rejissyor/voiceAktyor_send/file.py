@@ -10,10 +10,16 @@ from services.services import getVoiceAktyorList
 
 
 
-@dp.message_handler(content_types=["document"], state=RejisyorVoiceAktyorState.file)
+@dp.message_handler(content_types=["document", "video", "voice", "audio"], state=RejisyorVoiceAktyorState.file)
 async def process_file(message: Message, state: FSMContext):
-    file_id = message.document.file_id
-    file_name = message.document.file_name
+    if message.video:
+        file_id = message.video.file_id
+    elif message.voice:
+        file_id = message.voice.file_id
+    elif message.audio:
+        file_id = message.audio.file_id
+    else:
+        file_id = message.document.file_id
     
     user_data = await state.get_data()
     files = user_data.get('files', [])
@@ -21,7 +27,7 @@ async def process_file(message: Message, state: FSMContext):
     if files is None:
         files = []
     
-    files.append({'file_id': file_id, 'file_name': file_name})
+    files.append({'file_id': file_id})
     
     await state.update_data(files=files)
     

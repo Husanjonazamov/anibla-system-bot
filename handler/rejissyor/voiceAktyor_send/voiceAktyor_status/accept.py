@@ -13,7 +13,8 @@ from state import RejissyorTimerState
 async def translator_accept_status(callback: CallbackQuery, state: FSMContext):
     callback_data = callback.data.split("_")  
     rejissyor_id = int(callback_data[3])
-    voice_aktyor_id = int(callback_data[4])  
+    voice_aktyor_id = int(callback_data[4]) 
+    
     
     await state.update_data({'rejissyor_id': rejissyor_id})
     
