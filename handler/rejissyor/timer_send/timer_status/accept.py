@@ -10,4 +10,11 @@ from utils import texts, buttons
 
 @dp.callback_query_handler(lambda call: call.data.startswith('timer_work_accept_'))
 async def accept_anime_handler(callback: CallbackQuery, state: FSMContext):
+    data = callback.data.split('_')
+    timer_id = int(data[3]) 
     await callback.message.answer(texts.SUCCESS_ANIME)
+    
+    await bot.send_message(
+        chat_id=timer_id,
+        text=texts.SUCCESS_ANIME_WORKER
+    )

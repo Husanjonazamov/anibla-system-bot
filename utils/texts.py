@@ -1,40 +1,38 @@
-# all start funk
+# Barcha start funktsiyasi
 START = \
 """
-Assalomu alaykum {}
+Assalomu alaykum, {}! 👋
 """
 
-# all new anime
+# Yangi anime
 
 ANIME_NAME = \
 """
-Anime nomini kiriting
+Anime nomini kiriting: 🎬
 """ 
 
 ANIME_UZNAME = \
 """
-Uzbekcha nomini kiriting
+Uzbekcha nomini kiriting: 📛
 """ 
 
 SHIKIMORE_URL = \
 """
-Shikimore urlni kiriting!
+Shikimore URL manzilini kiriting: 🔗
 """
-
 
 SELECT_REJISSYOR = \
 """
-Rejissyorni tanlang!
+Rejissyorni tanlang: 🎥
 """
-
 
 def addAnime(**kwargs):
     newanime = ''
     
-    newanime += 'Tasdiqlash\n\n'
+    newanime += 'Tasdiqlash ✅\n\n'
     newanime += f"Nomi: {kwargs['name']}\n"
     newanime += f"Uzbekcha Nomi: {kwargs['uz_name']}\n"
-    newanime += f"Shikimore url: {kwargs['shikimore_url']}\n"
+    newanime += f"Shikimore URL: {kwargs['shikimore_url']}\n"
     newanime += f"Rejissyor ismi: {kwargs['first_name']}\n"
     
     return newanime
@@ -43,10 +41,10 @@ def addAnime(**kwargs):
 def rejissyor_nontification(**kwargs):
     newanime = ''
     
-    newanime += 'Yangi Anime\n\n'
+    newanime += 'Yangi Anime 🎉\n\n'
     newanime += f"Nomi: {kwargs['name']}\n"
     newanime += f"Uzbekcha Nomi: {kwargs['uz_name']}\n"
-    newanime += f"Shikimore url: {kwargs['shikimore_url']}\n"
+    newanime += f"Shikimore URL: {kwargs['shikimore_url']}\n"
     
 
     return newanime
@@ -55,63 +53,63 @@ def rejissyor_nontification(**kwargs):
 
 SUCESS_ADMIN = \
 """
-Anime Rejissorga yuborildi!
+Anime rejissorga muvaffaqiyatli yuborildi! 🎉
 """
 
 REJISSYOR_ACCEPT = \
 """
-✅ Muvaffaqiyatli qabul qilindi!
+✅ Muvaffaqiyatli qabul qilindi! Yaxshi ish! 💪
 """
 
 
 REJISSOR_SOURCE_FILE = \
 """
-Kerakli source faylarni kiriting!
+Kerakli source fayllarni kiriting! 📂
 """
 
 
 SELECT_TRANSLATORS  = \
 """
-Kerakli tarjimonlarni tanlang va Yuborih tugmasini boshing!
-(bir nechta tarjimon tanlasangiz ham bo'ladi)
+Kerakli tarjimonlarni tanlang va "Yuborish" tugmasini bosing! ✍️
+(bir nechta tarjimonni tanlash mumkin)
 """
 
 
 
 SUCCESS_TRANSLATORS = \
 """
-Siz tanlagan tarjimonlarga fayllar yuborildi
+Siz tanlagan tarjimonlarga fayllar muvaffaqiyatli yuborildi! 📩
 """
 
 
 NOT_TRANSLATORS = \
 """
-Siz hali tarjimon tanlamadizgiz
+Siz hali tarjimon tanlamadingiz. Iltimos, tanlang! 🧐
 """
 
 WORKER_NOTIFICATION_TEXT = \
 """
-Sizga yangi topshiriq berildi!
+Sizga yangi topshiriq berildi! 🎯
 """
 
 
 TRANSLATOR_ACCEPT = \
 """
-Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+Siz faylni qabul qildingiz. Rahmat! Ishni tugatib, "Bajarildi" tugmasini bosing. ✔️
 """
 
 
 
 TRANSLATORS_FILE_SEND = \
 """
-Bajarilgan ishni qayta yuklang
+Bajarilgan ishni qayta yuklang. 📤
 """ 
 
 
 
 TRANSLATORS_FEEDBACK = \
 """
-Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+Yaxshi fayl qabul qilindi! Ish bo'yicha izoh qoldiring. 📝
 """
 
 
@@ -119,71 +117,71 @@ Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
 
 TRANSLATOR_WORK_SEND = \
 """
-Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
-Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. ✨
+Rejissyor tomonidan fayl tekshirilib, sizga habar beriladi! 📢
 """
 
 
 
 CANCELLED = \
 """
-Tarjima bekor qilindi
+Tarjima bekor qilindi. ❌
 """
 
 
 CANCELLED_TRANSLATOR_SEND = \
 """
-Tarjima rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+Tarjima rejissyor tomonidan rad etildi. Iltimos, tekshirib qayta yuboring. 🔄
 """
 
 
 VOICE_SOURCE_FILE = \
 """
-Ovoz aktyorlari uchun source fayl kiriting
+Ovoz aktyorlari uchun source faylni kiriting! 🎤
 """
 
 
 SUCCES_TRANSLATOR_FILE = \
 """
-Siz tashlagan tarjimani rejissyor qabul qildi!
+Siz tashlagan tarjimani rejissyor qabul qildi! ✅
 """
 
 VOICE_WORKER_LIST = \
 """
-Ovoz aktyorlarini tanlang!
+Ovoz aktyorlarini tanlang! 🎭
 """
 
 
 
 SUCCESS_VOICE_AKTYOR = \
 """
-Siz tanlagan ovoz aktyorlariga fayllar yuborildi
+Siz tanlagan ovoz aktyorlariga fayllar yuborildi! 🎙️
 """
 
 
 NOT_VOICE_AKTYOR = \
 """
-Siz hali ovoz aktyorlarini tanlamadizgiz
+Siz hali ovoz aktyorlarini tanlamadingiz. Iltimos, tanlang! 🧐
 """
 
 
 VOICE_AKTYOR_ACCEPT = \
 """
-Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+Siz faylni qabul qildingiz. Rahmat! Ishni tugatib, "Bajarildi" tugmasini bosing. ✔️
 """
 
 
 
 VOICE_AKTYOR_FILE_SEND = \
 """
-Bajarilgan ishni qayta yuklang
+Bajarilgan ishni qayta yuklang. 📤
 """ 
 
 
 
 VOICE_AKTYOR_FEEDBACK = \
 """
-Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+Yaxshi fayl qabul qilindi! Ish bo'yicha izoh qoldiring. 📝
 """
 
 
@@ -191,110 +189,115 @@ Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
 
 VOICE_AKTYOR_WORK_SEND = \
 """
-Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
-Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. ✨
+Rejissyor tomonidan fayl tekshirilib, sizga habar beriladi! 📢
 """
 
 
 
 CANCELLED_VOICE_AKTYOR_SEND = \
 """
-Siz tashlagan fayl rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+Siz tashlagan fayl rejissyor tomonidan rad etildi. Iltimos, tekshirib qayta yuboring. 🔄
 """
 
 
 SUCCES_VOICE_AKTYOR_FILE = \
 """
-Siz tashlagan faylni rejissyor qabul qildi!
+Siz tashlagan faylni rejissyor qabul qildi! ✅
 """
 
 
 
 TIMER_SOURCE_FILE = \
 """
-Timerlar uchun source file kiriting!
+Timerlar uchun source faylni kiriting! ⏱️
 """
 
 
 
 TIMER_WORKER_LIST = \
 """
-Timerchilarni tanlang!
+Timerchilarni tanlang! ⏲️
 """
 
 
 NOT_TIMER = \
 """
-Siz hali timerlarni tanlamadingiz tanlamadizgiz
+Siz hali timerlarni tanlamadingiz. Iltimos, tanlang! 🧐
 """
 
 SUCCES_TIMER = \
 """
-Siz yuborgan fayl timerchilarga yuborildi
+Siz yuborgan fayl timerchilarga yuborildi! 📤
 """
 
 TIMER_ACCEPT = \
 """
-Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+Siz faylni qabul qildingiz. Rahmat! Ishni tugatib, "Bajarildi" tugmasini bosing. ✔️
 """
 
 
 
 TIMER_FILE_SEND = \
 """
-Bajarilgan ishni qayta yuklang
+Bajarilgan ishni qayta yuklang. 📤
 """ 
 
 
 TIMER_FEEDBACK = \
 """
-Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+Yaxshi fayl qabul qilindi! Ish bo'yicha izoh qoldiring. 📝
 """
 
 
 TIMER_WORK_SEND = \
 """
-Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
-Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. ✨
+Rejissyor tomonidan fayl tekshirilib, sizga habar beriladi! 📢
 """
 
 
 
 CANCELLED_TIMER_SEND = \
 """
-Fayl rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+Fayl rejissyor tomonidan rad etildi. Iltimos, tekshirib qayta yuboring. 🔄
 """
 
 
 CANCELLED_TIMER_FILE = \
 """
-Fayl bekor qilindi
+Fayl bekor qilindi. ❌
 """
 
 
 
 TIMER_FILE_SEND = \
 """
-Bajarilgan ishni qayta yuklang
+Bajarilgan ishni qayta yuklang. 📤
 """ 
 
 
 TIMER_FEEDBACK = \
 """
-Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+Yaxshi fayl qabul qilindi! Ish bo'yicha izoh qoldiring. 📝
 """
 
 
 
 TIMER_WORK_SEND = \
 """
-Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
-Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. ✨
+Rejissyor tomonidan fayl tekshirilib, sizga habar beriladi! 📢
 """
 
 
 
 SUCCESS_ANIME = \
 """
-✅ Anime muvaffaqiyatli tugatildi!
+✅ Anime muvaffaqiyatli tugatildi! Yaxshi ish! 👏
+"""
+
+
+SUCCESS_ANIME_WORKER = """
+✅ Rejissyor muvaffaqiyatli qabul qildi. 
 """

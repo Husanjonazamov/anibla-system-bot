@@ -1,10 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-
-
-NEW_ANIME_BUTTON = "Yangi anime qo'shish" 
-
+NEW_ANIME_BUTTON = "Yangi anime qo'shish ✨"
 
 ADMINPANEL = ReplyKeyboardMarkup(
     keyboard=[
@@ -14,7 +11,6 @@ ADMINPANEL = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
-
 
 BASE_BACK = "🔙 Ortga"
 
@@ -27,19 +23,14 @@ BACK = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-
-
 def create_inline_buttons(directors):
     keyboard = InlineKeyboardMarkup(row_width=1) 
     for director in directors:
-        
         callback_data = f"user_id_{director.get('user_id')}"
-        
         button = InlineKeyboardButton(
-            text=director.get("first_name"),  
+            text=f"🎬 {director.get('first_name')}",  
             callback_data=callback_data
         )
-
         keyboard.add(button)
     
     back_button = InlineKeyboardButton(
@@ -50,12 +41,8 @@ def create_inline_buttons(directors):
     keyboard.add(back_button)  
     return keyboard
 
-
-
-
-CHECK = 'Yuborish'
-CENCEL = 'Bekor qilish'
-
+CHECK = '✅ Yuborish'
+CENCEL = '❌ Bekor qilish'
 
 ADMIN_CHECK = ReplyKeyboardMarkup(
     keyboard=[
@@ -86,7 +73,6 @@ def create_accept_button(rejissyor, accepted=False):
     keyboard.add(accept_button)
     return keyboard
 
-
 REJISSYOR_FILE_CENCEL = "❌ Bekor qilish"
 
 def create_cancel_button():
@@ -96,8 +82,6 @@ def create_cancel_button():
     keyboard.add(cancel_button)
     
     return keyboard
-
-
 
 def create_translator_buttons(translators, selected_translators):
     keyboard = InlineKeyboardMarkup(row_width=2)
@@ -125,8 +109,6 @@ def create_translator_buttons(translators, selected_translators):
     
     return keyboard
 
-
-
 def create_accept_translator_button(translator_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
@@ -137,26 +119,22 @@ def create_accept_translator_button(translator_id: int, rejissyor_id: int):
     )
     return keyboard
 
-
-
 def create_completed_translator_button(translator_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
         InlineKeyboardButton(
-            text="Bajarildi",
+            text="Bajarildi ✅",
             callback_data=f"completed_translator_{translator_id}"
         )
     )
     return keyboard
-
-
 
 def create_accept_or_reject_button(translator_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     
     keyboard.add(
         InlineKeyboardButton(
-            text="✅Qabul qilaman",
+            text="✅ Qabul qilaman",
             callback_data=f"translator_work_accept_{translator_id}_{rejissyor_id}"
         )
     )
@@ -170,8 +148,6 @@ def create_accept_or_reject_button(translator_id: int, rejissyor_id: int):
     
     return keyboard
 
-
-
 def create_resend_file_button(rejissyor_id: int, translator_id: int):
     keyboard = InlineKeyboardMarkup()
     
@@ -184,9 +160,6 @@ def create_resend_file_button(rejissyor_id: int, translator_id: int):
     
     return keyboard
 
-
-
-
 def update_translators_cencelled_button():
     new_keyboard = InlineKeyboardMarkup()
     new_keyboard.add(
@@ -198,7 +171,6 @@ def update_translators_cencelled_button():
     
     return new_keyboard
 
-
 def update_translators_accept_button():
     update_button = InlineKeyboardMarkup()
     update_button.add(
@@ -209,9 +181,6 @@ def update_translators_accept_button():
     )
     
     return update_button
-
-
-
 
 def create_voice_aktyor_buttons(voice_aktyor, selected_voice):
     keyboard = InlineKeyboardMarkup(row_width=2)
@@ -239,10 +208,6 @@ def create_voice_aktyor_buttons(voice_aktyor, selected_voice):
     
     return keyboard
 
-
-
-
-
 def create_accept_voice_button(voice_aktyor_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
@@ -253,26 +218,22 @@ def create_accept_voice_button(voice_aktyor_id: int, rejissyor_id: int):
     )
     return keyboard
 
-
 def create_completed_voice_aktyor_button(voice_aktyor_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
         InlineKeyboardButton(
-            text="Bajarildi",
+            text="Bajarildi ✅",
             callback_data=f"completed_voice_{voice_aktyor_id}"
         )
     )
     return keyboard
-
-
-
 
 def create_accept_or_reject_voice_button(voice_aktyor_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     
     keyboard.add(
         InlineKeyboardButton(
-            text="✅Qabul qilaman",
+            text="✅ Qabul qilaman",
             callback_data=f"voice_work_accept_{voice_aktyor_id}_{rejissyor_id}"
         )
     )
@@ -286,8 +247,6 @@ def create_accept_or_reject_voice_button(voice_aktyor_id: int, rejissyor_id: int
     
     return keyboard
 
-
-
 def voice_resend_file_button(rejissyor_id: int, voice_aktyor_id: int):
     keyboard = InlineKeyboardMarkup()
     
@@ -299,10 +258,6 @@ def voice_resend_file_button(rejissyor_id: int, voice_aktyor_id: int):
     )
     
     return keyboard
-
-
-
-
 
 def create_timer_buttons(timer, selected_voice):
     keyboard = InlineKeyboardMarkup(row_width=2)
@@ -330,8 +285,6 @@ def create_timer_buttons(timer, selected_voice):
     
     return keyboard
 
-
-
 def create_accept_timer_button(timer_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
@@ -342,28 +295,22 @@ def create_accept_timer_button(timer_id: int, rejissyor_id: int):
     )
     return keyboard
 
-
-
 def create_completed_timer_button(timer_id: int):
     keyboard = InlineKeyboardMarkup()
     keyboard.add(
         InlineKeyboardButton(
-            text="Bajarildi",
+            text="Bajarildi ✅",
             callback_data=f"completed_timer_{timer_id}"
         )
     )
     return keyboard
-
-
-
-
 
 def accept_or_reject_timer_button(timer_id: int, rejissyor_id: int):
     keyboard = InlineKeyboardMarkup()
     
     keyboard.add(
         InlineKeyboardButton(
-            text="✅Qabul qilaman",
+            text="✅ Qabul qilaman",
             callback_data=f"timer_work_accept_{timer_id}_{rejissyor_id}"
         )
     )
@@ -376,8 +323,6 @@ def accept_or_reject_timer_button(timer_id: int, rejissyor_id: int):
     )
     
     return keyboard
-
-
 
 def timer_resend_file_button(rejissyor_id: int, timer_id: int):
     keyboard = InlineKeyboardMarkup()
