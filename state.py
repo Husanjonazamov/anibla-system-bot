@@ -29,9 +29,42 @@ class TranslatorCencelledState(StatesGroup):
     feedback = State()
     
     
-class VoiceActorState(StatesGroup):
+class RejisyorVoiceAktyorState(StatesGroup):
     rejissyor_id = State()
     file = State()
     voice_worker = State()
     
+    
+class VoiceAktyorState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()
+    
+    
+    
+class VoiceAktyorCenceledState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()
+
+
+
+
+class RejissyorTimerState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    timer_worker = State()
+    
+    
+class TimerState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()
+    
+    
+class TimerCenceledState(StatesGroup):
+    rejissyor_id = State()
+    file = State()
+    feedback = State()
+
     

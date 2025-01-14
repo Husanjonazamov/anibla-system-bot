@@ -165,3 +165,136 @@ NOT_VOICE_AKTYOR = \
 """
 Siz hali ovoz aktyorlarini tanlamadizgiz
 """
+
+
+VOICE_AKTYOR_ACCEPT = \
+"""
+Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+"""
+
+
+
+VOICE_AKTYOR_FILE_SEND = \
+"""
+Bajarilgan ishni qayta yuklang
+""" 
+
+
+
+VOICE_AKTYOR_FEEDBACK = \
+"""
+Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+"""
+
+
+
+
+VOICE_AKTYOR_WORK_SEND = \
+"""
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
+Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+"""
+
+
+
+CANCELLED_VOICE_AKTYOR_SEND = \
+"""
+Siz tashlagan fayl rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+"""
+
+
+SUCCES_VOICE_AKTYOR_FILE = \
+"""
+Siz tashlagan faylni rejissyor qabul qildi!
+"""
+
+
+
+TIMER_SOURCE_FILE = \
+"""
+Timerlar uchun source file kiriting!
+"""
+
+
+
+TIMER_WORKER_LIST = \
+"""
+Timerchilarni tanlang!
+"""
+
+
+NOT_TIMER = \
+"""
+Siz hali timerlarni tanlamadingiz tanlamadizgiz
+"""
+
+SUCCES_TIMER = \
+"""
+Siz yuborgan fayl timerchilarga yuborildi
+"""
+
+TIMER_ACCEPT = \
+"""
+Siz faylni qabul qildingiz. Rahmat! ishni tugatib bajarildi tugmasini bosing
+"""
+
+
+
+TIMER_FILE_SEND = \
+"""
+Bajarilgan ishni qayta yuklang
+""" 
+
+
+TIMER_FEEDBACK = \
+"""
+Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+"""
+
+
+TIMER_WORK_SEND = \
+"""
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
+Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+"""
+
+
+
+CANCELLED_TIMER_SEND = \
+"""
+Fayl rejissyor tomonidan rad etildi iltimos tekshirib qayta yuboring
+"""
+
+
+CANCELLED_TIMER_FILE = \
+"""
+Fayl bekor qilindi
+"""
+
+
+
+TIMER_FILE_SEND = \
+"""
+Bajarilgan ishni qayta yuklang
+""" 
+
+
+TIMER_FEEDBACK = \
+"""
+Yahshi fayl qabul qilindi ish boyicha izoh qoldiring
+"""
+
+
+
+TIMER_WORK_SEND = \
+"""
+Sizning faylingiz muvaffaqiyatli tarzda rejissorga yuborildi. 
+Rejissyor tomonidan fayl tekshirilib bo'lib habar beriladi!
+"""
+
+
+
+SUCCESS_ANIME = \
+"""
+✅ Anime muvaffaqiyatli tugatildi!
+"""

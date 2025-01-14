@@ -74,3 +74,18 @@ def getVoiceAktyorList():
         print(f"Error fetching data: {response.status_code}")
         return []
     
+    
+def getTimerList():
+    url = f"{BASE_URL}/user/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        directors = [
+            user for user in data.get('data', {}).get('results', [])
+            if user.get('role') == "timer"
+        ]
+        return directors
+    else:
+        print(f"Error fetching data: {response.status_code}")
+        return []
+    

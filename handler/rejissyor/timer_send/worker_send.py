@@ -10,29 +10,29 @@ from services.services import getTranslatorList
 
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("submit_voice_"), state='*')
-async def submit_voice_handler(callback_query: CallbackQuery, state: FSMContext):
+@dp.callback_query_handler(lambda c: c.data.startswith("submit_timer_"), state='*')
+async def submit_timer_handler(callback_query: CallbackQuery, state: FSMContext):
     
     data = await state.get_data()
-    selected_voice = data.get("selected_voice", [])
+    selected_timer = data.get("selected_timer", [])
     selected_files = data.get("files", [])
     rejissyor_id = data.get('rejissyor_id')  
     
     
-    if selected_voice and selected_files:
-        for voice_aktyor_id in selected_voice:
+    if selected_timer and selected_files:
+        for timer_id in selected_timer:
             for file in selected_files:
-                keyboard = buttons.create_accept_voice_button(voice_aktyor_id, rejissyor_id)
+                keyboard = buttons.create_accept_timer_button(timer_id, rejissyor_id)
                 
                 await bot.send_document(
-                    chat_id=voice_aktyor_id,
+                    chat_id=timer_id,
                     document=file['file_id'],
                     caption=texts.WORKER_NOTIFICATION_TEXT,
                     reply_markup=keyboard
                 )
         await callback_query.message.delete()
-        await callback_query.message.answer(texts.SUCCESS_VOICE_AKTYOR)
+        await callback_query.message.answer(texts.SUCCES_TIMER)
     else:
-        await callback_query.answer(texts.NOT_VOICE_AKTYOR)
+        await callback_query.answer(texts.NOT_TIMER)
     
     await state.finish()

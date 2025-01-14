@@ -5,12 +5,12 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp, bot
 from utils import texts, buttons
-from state import VoiceActorState
+from state import RejisyorVoiceAktyorState
 from services.services import getVoiceAktyorList
 
 
 
-@dp.callback_query_handler(lambda c: c.data.startswith("select_voice_"), state=VoiceActorState.voice_worker)
+@dp.callback_query_handler(lambda c: c.data.startswith("select_voice_"), state=RejisyorVoiceAktyorState.voice_worker)
 async def select_voice(callback_query: CallbackQuery, state: FSMContext):
     user_id = callback_query.from_user.id
     selected_voice_id = callback_query.data.split("_")[2]

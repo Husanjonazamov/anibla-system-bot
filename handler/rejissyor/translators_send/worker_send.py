@@ -33,7 +33,7 @@ async def submit_translators_handler(callback_query: CallbackQuery, state: FSMCo
                     reply_markup=keyboard
                 )
         await callback_query.message.delete()
-        await callback_query.message.answer(texts.SUCCESS_VOICE_AKTYOR)
+        await callback_query.message.answer(texts.SUCCESS_TRANSLATORS)
     else:
         await callback_query.answer(texts.NOT_TRANSLATORS)
     

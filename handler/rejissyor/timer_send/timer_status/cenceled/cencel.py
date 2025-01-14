@@ -10,23 +10,23 @@ from state import TranslatorCencelledState
 
 
 
-@dp.callback_query_handler(lambda callback: callback.data.startswith('reject_'), state='*')
+@dp.callback_query_handler(lambda callback: callback.data.startswith('retimer_'), state='*')
 async def translator_cencel(callback: CallbackQuery, state: FSMContext):
     data = callback.data.split("_")
 
     rejissyor_id = int(data[1])   
-    translator_id = int(data[2])  
+    timer_id = int(data[2])  
     await state.update_data({'rejissyor_id': rejissyor_id})
     
     await bot.send_message(
-        chat_id=translator_id,
-        text=texts.CANCELLED_TRANSLATOR_SEND,
-        reply_markup=buttons.create_resend_file_button(rejissyor_id, translator_id)
+        chat_id=timer_id,
+        text=texts.CANCELLED_TIMER_SEND,
+        reply_markup=buttons.timer_resend_file_button(rejissyor_id, timer_id)
     )
 
     await callback.message.edit_reply_markup(reply_markup=buttons.update_translators_cencelled_button())
 
-    await callback.answer(texts.CANCELLED)
+    await callback.answer(texts.CANCELLED_TIMER_FILE)
 
         
 

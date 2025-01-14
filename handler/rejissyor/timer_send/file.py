@@ -5,12 +5,12 @@ from aiogram.dispatcher import FSMContext
 # kode import
 from loader import dp, bot
 from utils import texts, buttons
-from state import RejisyorVoiceAktyorState
-from services.services import getVoiceAktyorList
+from state import RejissyorTimerState
+from services.services import getTimerList
 
 
 
-@dp.message_handler(content_types=["document"], state=RejisyorVoiceAktyorState.file)
+@dp.message_handler(content_types=["document"], state=RejissyorTimerState.file)
 async def process_file(message: Message, state: FSMContext):
     file_id = message.document.file_id
     file_name = message.document.file_name
@@ -25,11 +25,11 @@ async def process_file(message: Message, state: FSMContext):
     
     await state.update_data(files=files)
     
-    voice_aktyor = getVoiceAktyorList()
+    timer = getTimerList()
 
     await message.answer(
-        texts.VOICE_WORKER_LIST, 
-        reply_markup=buttons.create_voice_aktyor_buttons(voice_aktyor, [])
+        texts.TIMER_WORKER_LIST, 
+        reply_markup=buttons.create_timer_buttons(timer, [])
     )
     
-    await RejisyorVoiceAktyorState.voice_worker.set()
+    await RejissyorTimerState.timer_worker.set()
