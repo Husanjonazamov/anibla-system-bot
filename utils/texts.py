@@ -301,3 +301,38 @@ SUCCESS_ANIME = \
 SUCCESS_ANIME_WORKER = """
 ✅ Rejissyor muvaffaqiyatli qabul qildi. 
 """
+
+
+
+def translator_text(**kwargs):
+    translator = ''
+    
+    translator += f"Tarjimon ismi: {kwargs['firstname']}\n"
+    translator += f"Tarjimon tahallusi: {kwargs['stage_name']}\n"
+    translator += f"Ish bo'yicha izoh: {kwargs['feedback']}\n"
+    
+    
+    return translator
+    
+    
+
+def voice_aktyor_text(**kwargs):
+    voice_aktyor = ''
+    
+    voice_aktyor += f"Ovoz aktyor ismi: {kwargs['firstname']}\n"
+    voice_aktyor += f"Ovoz aktyor tahallusi: {kwargs['stage_name']}\n"
+    voice_aktyor += f"Ish bo'yicha izoh: {kwargs['feedback']}\n"
+    
+    return voice_aktyor
+    
+    
+
+def timer_text(**kwargs):
+    timer = ''
+    
+    timer += f"Timer ismi: {kwargs['firstname']}\n"
+    timer += f"Timer tahallusi: {kwargs['stage_name']}\n"
+    timer += f"Ish bo'yicha izoh: {kwargs['feedback']}\n"
+    
+    return timer
+    

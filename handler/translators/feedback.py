@@ -6,6 +6,7 @@ from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from utils import texts, buttons
 from state import Translators
+from services.services import getUser
 
 
 @dp.message_handler(content_types=['text'], state=Translators.feedback)
@@ -16,11 +17,20 @@ async def translator_feedback(message: Message, state: FSMContext):
     rejissyor_id = data.get('rejissyor_id')
     
     translator_id = message.from_user.id
+    user = getUser(translator_id)
+    
+    firstname = user['results'][0]['first_name']
+    stage_name = user['results'][0]['stage_name']
+    
     
     await bot.send_document(
         chat_id=rejissyor_id,
         document=file,
-        caption=feedback,
+        caption=texts.translator_text(
+                firstname=firstname,
+                stage_name=stage_name,
+                feedback=feedback
+            ),
         reply_markup=buttons.create_accept_or_reject_button(rejissyor_id, translator_id)
     )
     
