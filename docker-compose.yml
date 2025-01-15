@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: anibla_bot
+    restart: always
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: python3 bot.py
